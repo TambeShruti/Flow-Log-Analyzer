@@ -56,6 +56,25 @@ Run the tests with:
 ```bash
 python -m unittest test_flow_log_processing.py
 ```
+## Time Complexity and Space Complexity Analysis:
+Loading the lookup table (`load_lookup_table`):
+Time: O(L), where L is the number of rows in the lookup CSV file.
+Processing flow logs (`process_flow_logs`):
+Time: O(F), where F is the number of lines in the flow log file.
+Writing results (`write_results`):
+Time: O(T + P), where T is the number of unique tags, and P is the number of unique port/protocol combinations.
+
+Space Complexity:
+Loading the lookup table:
+Space: O(L), for storing all the mappings from the lookup file.
+Processing flow logs:
+Space: O(F + L), for storing tag counts and port/protocol combinations in dictionaries, plus the lookup table.
+
+Overall Complexity:
+Time: O(F + L)
+Space: O(F + L)
+This means the performance depends on the size of the flow log file (F) and the number of mappings in the lookup table (L).
+
 ## Additional Analysis
 The program uses a dictionary for efficient lookups, ensuring that even with large files, the processing remains fast.
 Case-insensitive matches are handled by converting protocol names to lowercase.
