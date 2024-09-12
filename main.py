@@ -19,7 +19,7 @@ def load_lookup_table(lookup_table_file):
     lookup_table = {}
     with open(lookup_table_file, 'r') as f:
         reader = csv.reader(f)
-        next(reader)  # Skip the header
+        next(reader) 
         for row in reader:
             if len(row) == 3:
                 try:
@@ -42,16 +42,12 @@ def process_flow_logs(flow_log_file, lookup_table):
         for line in f:
             row = line.split()
             try:
-                # Adjust field indices based on actual log structure
                 destination_port = int(row[5])
                 protocol_num = row[7]
-                protocol = protocol_name(protocol_num).lower()  # Convert to protocol name and ensure lowercase
-                
-                # Determine the tag based on destination port and protocol
+                protocol = protocol_name(protocol_num).lower() 
                 key = (destination_port, protocol)
                 tag = lookup_table.get(key, 'unknown')
                 
-                # Update counts
                 if tag == 'unknown':
                     untagged_count += 1
                 else:
