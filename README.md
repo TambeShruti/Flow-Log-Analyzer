@@ -54,7 +54,7 @@ Unit tests are provided in `test_flow_log_processing.py`:
 
 Run the tests with:
 ```bash
-python -m unittest test_flow_log_processing.py
+python test_flow_log_processing.py
 ```
 ## Time Complexity and Space Complexity Analysis:
 - Loading the lookup table (`load_lookup_table`):
