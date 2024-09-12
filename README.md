@@ -1,6 +1,5 @@
 # Flow-Log-Analyzer
 
-# Flow Log Tag Mapping
 
 This program parses a file containing flow log data and maps each row to a tag based on a lookup table defined in a CSV file. It handles case-insensitive matches and supports flow log files up to 10 MB and lookup files with up to 10,000 mappings.
 
