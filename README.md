@@ -73,7 +73,7 @@ Space Complexity:
 Overall Complexity:
 - Time: O(F + L)
 - Space: O(F + L)
-  This means the performance depends on the size of the flow log file (F) and the number of mappings in the lookup table (L).
+- This means the performance depends on the size of the flow log file (F) and the number of mappings in the lookup table (L).
 
 ## Additional Analysis
 The program uses a dictionary for efficient lookups, ensuring that even with large files, the processing remains fast.
